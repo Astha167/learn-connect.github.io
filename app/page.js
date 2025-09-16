@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const books = [
-  { id: 1, title: "Mathematics", std: "Std II", image: "/math.jpg" },
-  { id: 2, title: "English", std: "Std II", image: "/eng.jpg" },
-  { id: 3, title: "Mathematics", std: "Std III", image: "/maths.jpg" },
-  { id: 4, title: "English", std: "Std III", image: "/eng2.jpg" },
+  { id: 1, title: "Mathematics", std: "Std II", image: "/images/math.jpg" },
+  { id: 2, title: "English", std: "Std II", image: "/images/eng.jpg" },
+  { id: 3, title: "Mathematics", std: "Std III", image: "/images/maths.jpg" },
+  { id: 4, title: "English", std: "Std III", image: "/images/eng2.jpg" },
 ];
 
 export default function Home() {
