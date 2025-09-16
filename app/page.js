@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const books = [
-  { id: 1, title: "Mathematics", std: "Std II", image: "/images/math.jpg" },
-  { id: 2, title: "English", std: "Std II", image: "/images/eng.jpg" },
-  { id: 3, title: "Mathematics", std: "Std III", image: "/images/maths.jpg" },
-  { id: 4, title: "English", std: "Std III", image: "/images/eng2.jpg" },
+  { id: 1, title: "Mathematics", std: "Std II", image: "/dog.jpg" },
+  { id: 2, title: "English", std: "Std II", image: "/dog.jpg" },
+  { id: 3, title: "Mathematics", std: "Std III", image: "/dog.jpg" },
+  { id: 4, title: "English", std: "Std III", image: "/dog.jpg" },
 ];
 
 export default function Home() {
@@ -13,17 +13,6 @@ export default function Home() {
     <div>
       {/* Header Section */}
       <div className="bg-blue-700 text-white text-center py-6">
-        {/* ✅ Logo */}
-        <div className="flex justify-center mb-4">
-          <Image
-            src="/images/logo.png" // now from images folder
-            alt="Learn Connect Logo"
-            width={80}
-            height={80}
-            className="rounded-full"
-          />
-        </div>
-
         <h1 className="text-2xl font-bold">Welcome to Learn Connect!</h1>
         <p className="mt-2">
           Discover a curated collection of educational books with interactive
