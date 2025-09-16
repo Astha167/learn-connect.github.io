@@ -2,17 +2,17 @@
   "name": "learn-connect",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "export": "next export",
-  "deploy": "npm run build && npm run export && gh-pages -d out"
-},
-
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "npm run build && npm run export && gh-pages -d out"
+  },
   "dependencies": {
-    "next": "15.5.3",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "next": "^15.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

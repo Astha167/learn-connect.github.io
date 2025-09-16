@@ -1,4 +1,3 @@
-// app/page.js
 import Link from "next/link";
 
 const books = [
@@ -15,8 +14,8 @@ export default function Home() {
       <div className="bg-blue-700 text-white text-center py-6">
         <h1 className="text-2xl font-bold">Welcome to Learn Connect!</h1>
         <p className="mt-2">
-          Discover a curated collection of educational books with interactive quizzes.
-          Perfect for classroom instruction and self-paced learning
+          Discover a curated collection of educational books with interactive
+          quizzes. Perfect for classroom instruction and self-paced learning.
         </p>
       </div>
 
@@ -46,7 +45,7 @@ export default function Home() {
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm mb-4">{book.std}</p>
 
-              {/* Navigate to book page */}
+              {/* ✅ Corrected route */}
               <Link href={`/book/${book.id}`}>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-800">
                   View Books and Quizzes

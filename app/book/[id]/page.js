@@ -1,11 +1,11 @@
 import Link from "next/link";
 
+// ✅ Move book data to a shared file if needed
 const books = [
   {
     id: 1,
     title: "Mathematics Std II",
-    embed:"https://docs.google.com/presentation/d/e/EXAMPLE_LINK/pubembed"
-      ,
+    embed: "https://docs.google.com/presentation/d/e/EXAMPLE_LINK/pubembed",
   },
   {
     id: 2,
@@ -20,34 +20,65 @@ const books = [
   {
     id: 4,
     title: "English Std III",
-    embed: "https://docs.google.com/presentation/d/e/2PACX-1vSjDIXW3G0PWh63OdeyajO0THCqwbQBZSpURZ1sKSntI3ntQWCQ8p4XlY-MMbNRvQ/pubembed?start=true&loop=false&delayms=3000",
+    embed:
+      "https://docs.google.com/presentation/d/e/2PACX-1vSjDIXW3G0PWh63OdeyajO0THCqwbQBZSpURZ1sKSntI3ntQWCQ8p4XlY-MMbNRvQ/pubembed?start=true&loop=false&delayms=3000",
   },
 ];
 
-export default function BookPage({ params }) {
-  const { id } = params;
-  const book = books.find((b) => b.id.toString() === id);
+// ✅ Generate static params for pre-rendering (important for GitHub Pages)
+export async function generateStaticParams() {
+  return books.map((book) => ({ id: book.id.toString() }));
+}
 
-  if (!book) return <p className="text-center mt-10">Book not found</p>;
+// ✅ Dynamic Book Page
+export default function BookPage({ params }) {
+  const book = books.find((b) => b.id === Number(params.id));
+
+  if (!book) {
+    return (
+      <div className="p-6 text-center">
+        <h1 className="text-xl font-bold text-red-600">Book not found</h1>
+        <Link href="/">
+          <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+            Back to Library
+          </button>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 text-center">
-      <h1 className="text-2xl font-bold mb-4">{book.title}</h1>
+      <h1 className="text-2xl font-bold mb-6">{book.title}</h1>
 
-      <iframe
-        src={book.embed}
-        frameBorder="0"
-        width="100%"
-        height="600"
-        allowFullScreen
-      ></iframe>
+      {/* Responsive iframe without plugin */}
+      <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
+        <iframe
+          src={book.embed}
+          className="absolute top-0 left-0 w-full h-full"
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
 
-      <div className="mt-6">
-        <Link href="/">
-          <button className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-800">
-            ← Back to Library
-          </button>
-        </Link>
+      {/* Navigation Buttons */}
+      <div className="flex justify-between mt-6">
+        {book.id > 1 ? (
+          <Link href={`/book/${book.id - 1}`}>
+            <button className="px-4 py-2 bg-gray-300 rounded-lg">
+              ⬅ Previous
+            </button>
+          </Link>
+        ) : (
+          <div />
+        )}
+        {book.id < books.length && (
+          <Link href={`/book/${book.id + 1}`}>
+            <button className="px-4 py-2 bg-gray-300 rounded-lg">
+              Next ➡
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
