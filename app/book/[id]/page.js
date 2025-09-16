@@ -12,11 +12,11 @@ const books = [
       "https://docs.google.com/presentation/d/e/2PACX-1vTLRDSnaYBrnOriwRSHjYYx22xtyqdNy-GRBa2J5yKI159LzsLEyRULh403fmMYaQ/pubembed?start=true&loop=false&delayms=3000",
   },
   {
-    id: 3,
-    title: "Mathematics Std III",
-    embed:
-      "https://docs.google.com/presentation/d/e/2PACX-1vRVjhLVoLzJegU-BOEG93B2ZKirKv4UeqbD-fmj5oB9eSsxdR6h55VD0PVqif9ewg/pubembed?start=true&loop=false&delayms=3000",
-  },
+  id: 3,
+  title: "Mathematics Std III",
+  embed:
+    "https://docs.google.com/presentation/d/e/2PACX-1vRVjhLVoLzJegU-BOEG93B2ZKirKv4UeqbD-fmj5oB9eSsxdR6h55VD0PVqif9ewg/pubembed?start=true&loop=false&delayms=3000",
+},
   {
     id: 4,
     title: "English Std III",
