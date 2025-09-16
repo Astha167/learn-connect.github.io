@@ -3,7 +3,7 @@ const books = [
     id: 1,
     title: "Mathematics Std II",
     embed:
-      "https://docs.google.com/presentation/d/e/2PACX-1vR2KPqMLI-W7T4NbO2aeGtxxiOElwxIb_uDvR-nnDs_sVlWlX5_n9CpLrCRNQf6Gg/pubembed?start=false&loop=false&delayms=3000",
+      "https://docs.google.com/presentation/d/e/2PACX-1vR2KPqMLI-W7T4NbO2aeGtxxiOElwxIb_uDvR-nnDs_sVlWlX5_n9CpLrCRNQf6Gg/pub?start=true&loop=false&delayms=3000",
   },
   {
     id: 2,
