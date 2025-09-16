@@ -16,7 +16,7 @@ export default function Home() {
         {/* ✅ Logo */}
         <div className="flex justify-center mb-4">
           <Image
-            src="/logo.png" // place your logo in /public/logo.png
+            src="/images/logo.png" // now from images folder
             alt="Learn Connect Logo"
             width={80}
             height={80}
@@ -49,10 +49,12 @@ export default function Home() {
               key={book.id}
               className="border rounded-2xl shadow-md p-4 flex flex-col items-center"
             >
-              <img
+              <Image
                 src={book.image}
                 alt={book.title}
-                className="w-32 h-32 object-cover mb-4 rounded"
+                width={128}
+                height={128}
+                className="object-cover mb-4 rounded"
               />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm mb-4">{book.std}</p>
