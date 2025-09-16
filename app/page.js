@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const books = [
   { id: 1, title: "Mathematics", std: "Std II", image: "/math.jpg" },
@@ -12,6 +13,17 @@ export default function Home() {
     <div>
       {/* Header Section */}
       <div className="bg-blue-700 text-white text-center py-6">
+        {/* ✅ Logo */}
+        <div className="flex justify-center mb-4">
+          <Image
+            src="/logo.png" // place your logo in /public/logo.png
+            alt="Learn Connect Logo"
+            width={80}
+            height={80}
+            className="rounded-full"
+          />
+        </div>
+
         <h1 className="text-2xl font-bold">Welcome to Learn Connect!</h1>
         <p className="mt-2">
           Discover a curated collection of educational books with interactive
@@ -45,7 +57,6 @@ export default function Home() {
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm mb-4">{book.std}</p>
 
-              {/* ✅ Corrected route */}
               <Link href={`/book/${book.id}`}>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-800">
                   View Books and Quizzes
