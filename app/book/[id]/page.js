@@ -1,18 +1,21 @@
+import Link from "next/link";
+
+// ✅ Move book data to a shared file if needed
 const books = [
   {
     id: 1,
     title: "Mathematics Std II",
-    embed: "https://docs.google.com/presentation/d/e/EXAMPLE_LINK/pubembed",
+    embed: "https://docs.google.com/presentation/d/e/2PACX-1vR2KPqMLI-W7T4NbO2aeGtxxiOElwxIb_uDvR-nnDs_sVlWlX5_n9CpLrCRNQf6Gg/pubembed?start=true&loop=false&delayms=3000",
   },
   {
     id: 2,
     title: "English Std II",
-    embed: "https://docs.google.com/presentation/d/e/EXAMPLE_LINK/pubembed",
+    embed: "https://docs.google.com/presentation/d/e/2PACX-1vTLRDSnaYBrnOriwRSHjYYx22xtyqdNy-GRBa2J5yKI159LzsLEyRULh403fmMYaQ/pubembed?start=true&loop=false&delayms=3000"
   },
   {
     id: 3,
     title: "Mathematics Std III",
-    embed: "https://docs.google.com/presentation/d/e/EXAMPLE_LINK/pubembed",
+    embed: "https://docs.google.com/presentation/d/e/2PACX-1vRVjhLVoLzJegU-BOEG93B2ZKirKv4UeqbD-fmj5oB9eSsxdR6h55VD0PVqif9ewg/pubembed?start=true&loop=false&delayms=3000",
   },
   {
     id: 4,
@@ -22,6 +25,7 @@ const books = [
   },
 ];
 
+// ✅ Generate static params for pre-rendering (important for GitHub Pages)
 export async function generateStaticParams() {
   return books.map((book) => ({ id: book.id.toString() }));
 }
@@ -79,4 +83,3 @@ export default function BookPage({ params }) {
     </div>
   );
 }
-
